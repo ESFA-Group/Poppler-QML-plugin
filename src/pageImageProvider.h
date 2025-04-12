@@ -16,20 +16,21 @@
  * Author: Anthony Granger <grangeranthony@gmail.com>
  */
 
-#ifndef PAGEIMAGEPROVIDER_H
-#define PAGEIMAGEPROVIDER_H
-
-#include <QQuickImageProvider>
-#include <poppler/qt5/poppler-qt5.h>
-
-class PageImageProvider : public QQuickImageProvider
-{
-  public:
-    PageImageProvider(Poppler::Document* pdfDocument = nullptr);
-    QImage requestImage(const QString& id, QSize* size, const QSize& requestedSize);
-
-  private:
-    Poppler::Document *document;
-};
-
-#endif // PAGEIMAGEPROVIDER_H
+ #ifndef PAGEIMAGEPROVIDER_H
+ #define PAGEIMAGEPROVIDER_H
+ 
+ #include <QQuickImageProvider>
+ #include <poppler/qt6/poppler-qt6.h>
+ 
+ class PageImageProvider : public QQuickImageProvider
+ {
+   public:
+     PageImageProvider(Poppler::Document* pdfDocument = nullptr);
+     QImage requestImage(const QString& id, QSize* size, const QSize& requestedSize);
+ 
+   private:
+     Poppler::Document *document;
+ };
+ 
+ #endif // PAGEIMAGEPROVIDER_H
+ 
